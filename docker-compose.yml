@@ -1,0 +1,12 @@
+version: '2.2'
+services:
+  keras_flask_app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/app
+    tty: true
+
