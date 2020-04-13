@@ -55,10 +55,6 @@ $ python app.py
 
 Open http://localhost:5000 and have fun. :smiley:
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/5097752/71064959-3c34be80-213e-11ea-8e13-91800ca2d345.gif" height="480px" alt="">
-</p>
-
 ------------------
 
 ## Customization
