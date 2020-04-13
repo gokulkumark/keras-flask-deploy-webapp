@@ -6,3 +6,7 @@ gevent
 pillow
 h5py
 tensorflow
+opencv-python
+pandas
+biosppy
+matplotlib

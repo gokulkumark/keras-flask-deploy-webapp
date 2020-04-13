@@ -25,6 +25,7 @@ function fileSelectHandler(e) {
   fileDragHover(e);
   for (var i = 0, f; (f = files[i]); i++) {
     previewFile(f);
+
   }
 }
 
@@ -82,10 +83,7 @@ function previewFile(file) {
   var fileName = encodeURI(file.name);
 
   var reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onloadend = () => {
-    imagePreview.src = URL.createObjectURL(file);
-
+  reader.onload= () => {
     show(imagePreview);
     hide(uploadCaption);
 
@@ -95,13 +93,14 @@ function previewFile(file) {
 
     displayImage(reader.result, "image-display");
   };
+  reader.readAsBinaryString(file);
 }
 
 //========================================================================
 // Helper functions
 //========================================================================
 
-function predictImage(image) {
+function predict(file) {
   fetch("/predict", {
     method: "POST",
     headers: {

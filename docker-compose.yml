@@ -1,0 +1,39 @@
+version: '2'
+services:
+  main:
+    environment:
+      - env=local
+      - chargebee_test_key=test_4B5VTG7RWdUwK3u51GZBLFcdFcuAs5UXcs
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      args:
+        mode: local
+    ports:
+     - "80:80"
+     - "8126:8126"
+    volumes:
+     - ./src:/srv/converter/src
+     - ./tests:/srv/converter/tests
+    mac_address: 02:42:ac:11:00:04
+  usdz:
+    environment:
+      - env=local
+    build:
+      context: .
+      dockerfile: ./docker/USDZDockerfile
+      args:
+        mode: local
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+    ports:
+     - "8008:8008"
+    volumes:
+     - ./src:/srv/converter/src
+     - ./tests:/srv/converter/tests
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    tty: true
+
+
