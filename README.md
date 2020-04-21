@@ -43,7 +43,7 @@ It's easy to install and run it on your computer.
 
 ```shell
 # 1. First, clone the repo
-$ git clone https://github.com/mtobeiyf/keras-flask-deploy-webapp.git
+$ git clone https://github.com/gokulkumark/keras-flask-deploy-webapp
 $ cd keras-flask-deploy-webapp
 
 # 2. Install Python packages
